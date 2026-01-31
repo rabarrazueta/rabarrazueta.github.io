@@ -2,10 +2,387 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Processia Ops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Processia Ops - Automatización empresarial, RPA, ERP Odoo y pipelines ETL para empresas en Ecuador">
+    <meta name="keywords" content="automatización, RPA, n8n, ERP Odoo, ETL, Business Intelligence, Ecuador, digitalización empresarial">
+    <meta name="author" content="Processia Ops">
+    
+    <title>Processia Ops | Automatización Empresarial Inteligente</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Bienvenido a Processia Ops</h1>
-    <p>Página en construcción</p>
+
+    <!-- ========================================
+         SECCIÓN: NAVBAR (Menú de Navegación)
+         ======================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- Logo de Processia -->
+            <a class="navbar-brand" href="#">
+                <img src="images/solo_logo_sin_fondo.png" alt="Processia Ops" height="45">
+            </a>
+            
+            <!-- Botón hamburguesa para móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Links del menú -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#tecnologias">Tecnologías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary px-4" href="#contacto">
+                            <i class="bi bi-calendar-check me-2"></i>Agendar Consulta
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECCIÓN: HERO (Encabezado Principal)
+         ======================================== -->
+    <section class="hero-section" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Columna de texto -->
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0 animate-in">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Automatiza procesos.<br>
+                        <span class="text-primary">Multiplica resultados.</span>
+                    </h1>
+                    <p class="lead text-muted mb-4 fs-5">
+                        Ayudamos a empresas ecuatorianas a digitalizar operaciones 
+                        y aumentar su eficiencia con soluciones tecnológicas inteligentes.
+                    </p>
+                    
+                    <!-- CTAs principales -->
+                    <div class="d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#contacto" class="btn btn-primary btn-lg px-5 py-3">
+                            <i class="bi bi-calendar-check me-2"></i>Agendar Diagnóstico Gratuito
+                        </a>
+                        <a href="#servicios" class="btn btn-outline-secondary btn-lg px-5 py-3">
+                            Ver Servicios
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna de imagen -->
+                <div class="col-lg-6 text-center animate-in">
+                    <img src="https://via.placeholder.com/600x450/1E3A5F/D4AF37?text=Dashboard+Processia" 
+                         alt="Automatización de procesos empresariales" 
+                         class="img-fluid rounded-4 shadow-lg">
+                    <!-- Reemplaza con tu imagen real después -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN: PROBLEMA → SOLUCIÓN
+         ======================================== -->
+    <section class="py-5 bg-primary text-white text-center section-padding">
+        <div class="container">
+            <h2 class="display-6 fw-bold mb-3">
+                ¿Tu empresa pierde tiempo en tareas manuales repetitivas?
+            </h2>
+            <p class="lead mb-0 fs-5">
+                Transformamos procesos ineficientes en sistemas automatizados que funcionan 24/7
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN: NUESTROS SERVICIOS
+         ======================================== -->
+    <section id="servicios" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Nuestros Servicios</h2>
+                <p class="text-muted fs-5">Soluciones integrales para la transformación digital de tu empresa</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Servicio 1: Diagnóstico -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Diagnóstico Tecnológico</h5>
+                        <p class="card-text text-muted">
+                            Análisis del estado actual de tu empresa e identificación de oportunidades de optimización mediante tecnología
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2: RPA con n8n -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Automatización RPA & Workflows</h5>
+                        <p class="card-text text-muted">
+                            Generación de flujos inteligentes con n8n para automatizar tareas repetitivas y conectar sistemas
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 3: ERP Odoo -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Módulos ERP Personalizados</h5>
+                        <p class="card-text text-muted">
+                            Implementación de Odoo adaptado a tu negocio: ventas, inventario, contabilidad, producción y más
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 4: ETL & BI -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h5 class="card-title fw-bold mb-3">Ingeniería de Datos ETL</h5>
+                        <p class="card-text text-muted">
+                            Pipelines de datos para extracción, transformación y carga hacia plataformas BI para análisis estratégico
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN: TECNOLOGÍAS + SECTORES
+         ======================================== -->
+    <section id="tecnologias" class="section-padding">
+        <div class="container">
+            <!-- Subsección: Tecnologías que Dominamos -->
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Tecnologías que Dominamos</h2>
+                <p class="text-muted fs-5">Stack tecnológico empresarial con expertise comprobado</p>
+            </div>
+            
+            <div class="row g-4 mb-5 justify-content-center">
+                <!-- Tecnología 1: Odoo -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-gear-fill text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">Odoo ERP</span>
+                    </div>
+                </div>
+                
+                <!-- Tecnología 2: n8n -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-diagram-3-fill text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">n8n Workflows</span>
+                    </div>
+                </div>
+                
+                <!-- Tecnología 3: Python -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-code-slash text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">Python & PySpark</span>
+                    </div>
+                </div>
+                
+                <!-- Tecnología 4: PostgreSQL -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-database-fill text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">PostgreSQL</span>
+                    </div>
+                </div>
+                
+                <!-- Tecnología 5: Power BI -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-bar-chart-fill text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">Power BI</span>
+                    </div>
+                </div>
+                
+                <!-- Tecnología 6: Google Cloud -->
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="tech-badge p-3 rounded-3 bg-white shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-cloud-fill text-primary fs-1 mb-2"></i>
+                        <span class="fw-bold small">Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divisor visual -->
+            <hr class="my-5 border-2">
+            
+            <!-- Subsección: Sectores que Atendemos -->
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Sectores que Atendemos</h2>
+                <p class="text-muted fs-5">Experiencia en múltiples industrias</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Sector 1: Retail -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-shop text-gold fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Retail & Comercio</h5>
+                        <p class="text-muted small mb-0">Gestión de inventarios, PoS y ventas multicanal</p>
+                    </div>
+                </div>
+                
+                <!-- Sector 2: Manufactura -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-tools text-gold fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Manufactura & Logística</h5>
+                        <p class="text-muted small mb-0">Control de producción y cadena de suministro</p>
+                    </div>
+                </div>
+                
+                <!-- Sector 3: Servicios -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-briefcase text-gold fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Servicios Profesionales</h5>
+                        <p class="text-muted small mb-0">Automatización de procesos administrativos</p>
+                    </div>
+                </div>
+                
+                <!-- Sector 4: Educación/Público -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm p-4 text-center h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-mortarboard text-gold fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Educación & Sector Público</h5>
+                        <p class="text-muted small mb-0">Digitalización de procesos institucionales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN: FORMULARIO DE CONTACTO
+         ======================================== -->
+    <section id="contacto" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">¿Listo para Automatizar tu Empresa?</h2>
+                        <p class="text-muted fs-5">
+                            Agenda una consultoría gratuita de 30 minutos y descubre cómo podemos optimizar tus procesos
+                        </p>
+                    </div>
+                    
+                    <!-- Formulario -->
+                    <form id="contactForm" class="card shadow border-0 p-4 p-md-5">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label fw-semibold">Nombre Completo *</label>
+                                <input type="text" class="form-control form-control-lg" id="nombre" name="nombre" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">Email Corporativo *</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="empresa" class="form-label fw-semibold">Empresa</label>
+                                <input type="text" class="form-control form-control-lg" id="empresa" name="empresa">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label fw-semibold">Teléfono</label>
+                                <input type="tel" class="form-control form-control-lg" id="telefono" name="telefono" placeholder="+593">
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label fw-semibold">¿Qué proceso de tu empresa quieres optimizar? *</label>
+                                <textarea class="form-control form-control-lg" id="mensaje" name="mensaje" rows="5" required 
+                                          placeholder="Describe brevemente el desafío o proceso que necesitas automatizar..."></textarea>
+                            </div>
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100 py-3 fw-semibold">
+                                    <i class="bi bi-send-fill me-2"></i>Enviar Solicitud
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje de respuesta del formulario -->
+                        <div id="formMessage" class="mt-4"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN: FOOTER
+         ======================================== -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <img src="images/solo_logo_sin_fondo.png" alt="Processia Ops" height="40" class="mb-3">
+                    <p class="mb-0 text-white-50">Automatización empresarial inteligente</p>
+                </div>
+                
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-2 fs-5">
+                        <a href="mailto:contacto@processia.online" class="text-decoration-none">
+                            <i class="bi bi-envelope-fill me-2"></i>contacto@processia.online
+                        </a>
+                    </p>
+                    <p class="mb-0 text-white-50 small">
+                        &copy; 2026 Processia Ops. Todos los derechos reservados. | Quito, Ecuador
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personalizado (para formulario n8n) -->
+    <script src="js/main.js"></script>
 </body>
 </html>
