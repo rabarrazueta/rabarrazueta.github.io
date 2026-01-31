@@ -43,7 +43,7 @@ html {
 }
 
 .navbar-logo {
-    height: 55px;
+    height: 70px;
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -83,7 +83,7 @@ html {
 /* En móvil, logo más pequeño */
 @media (max-width: 768px) {
     .navbar-logo {
-        height: 45px;
+        height: 55px;
     }
 }
 
@@ -366,7 +366,7 @@ footer {
 }
 
 .footer-logo {
-    height: 50px;
+    height: 70px;
     width: auto;
 }
 
