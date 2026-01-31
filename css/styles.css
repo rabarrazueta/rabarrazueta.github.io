@@ -1,45 +1,96 @@
 /* ============================================
    PROCESSIA OPS - ESTILOS PERSONALIZADOS
-   Colores de marca: Navy Blue + Gold
+   Colores: Navy Blue (#1E3A5F) + Gold (#D4AF37)
    ============================================ */
 
-/* Variables de colores de Processia */
+/* Variables de colores */
 :root {
-    --processia-navy: #1E3A5F;      /* Azul oscuro principal */
-    --processia-gold: #D4AF37;      /* Dorado para acentos */
-    --processia-black: #000000;     /* Negro */
-    --processia-white: #FFFFFF;     /* Blanco */
-    --processia-light-bg: #F8F9FA;  /* Gris claro para secciones alternas */
-    --processia-text: #333333;      /* Texto principal */
+    --processia-navy: #1E3A5F;
+    --processia-gold: #D4AF37;
+    --processia-black: #000000;
+    --processia-white: #FFFFFF;
+    --processia-light-bg: #F8F9FA;
+    --processia-text: #333333;
 }
 
 /* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--processia-text);
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* Navbar personalizado */
+/* ============================================
+   NAVBAR
+   ============================================ */
+
 .navbar {
     background-color: var(--processia-white) !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     padding: 0.75rem 0;
+    transition: all 0.3s ease;
 }
 
-.navbar-brand img {
+.navbar-logo {
+    height: 55px;
+    width: auto;
     transition: transform 0.3s ease;
 }
 
-.navbar-brand img:hover {
+.navbar-logo:hover {
     transform: scale(1.05);
 }
 
-/* Botones personalizados */
+.nav-link {
+    color: var(--processia-navy) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    color: var(--processia-gold) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--processia-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+/* En móvil, logo más pequeño */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 45px;
+    }
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
 .btn-primary {
     background-color: var(--processia-navy);
     border-color: var(--processia-navy);
@@ -56,8 +107,23 @@ html {
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
+.btn-outline-light {
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 600;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--processia-gold);
+    border-color: var(--processia-gold);
+    color: var(--processia-navy);
+    transform: translateY(-2px);
+}
+
 .btn-outline-secondary {
-    border-color: var(--processia-navy);
+    border: 2px solid var(--processia-navy);
     color: var(--processia-navy);
     font-weight: 600;
 }
@@ -68,37 +134,117 @@ html {
     color: var(--processia-white);
 }
 
-/* Hero section */
-.hero-section {
-    min-height: 85vh;
+/* ============================================
+   HERO SECTION - IMAGEN DE FONDO COMPLETA
+   ============================================ */
+
+.hero-section-bg {
+    min-height: 90vh;
+    background-image: url('../images/hero-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+    padding: 8rem 0 5rem;
+    margin-top: 76px;
 }
 
-.text-primary {
-    color: var(--processia-navy) !important;
+/* Overlay oscuro para legibilidad */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(30, 58, 95, 0.90) 0%, 
+        rgba(30, 58, 95, 0.75) 50%,
+        rgba(30, 58, 95, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+/* Contenido del hero por encima del overlay */
+.hero-content {
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .text-gold {
     color: var(--processia-gold) !important;
 }
 
-/* Sección de problema (franja azul) */
+/* Responsive del hero */
+@media (max-width: 992px) {
+    .hero-section-bg {
+        min-height: 80vh;
+        padding: 6rem 0 4rem;
+        background-attachment: scroll;
+    }
+    
+    .hero-title {
+        font-size: 2.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section-bg {
+        min-height: 70vh;
+        padding: 4rem 0 3rem;
+        background-position: center right;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+
 .bg-primary {
     background-color: var(--processia-navy) !important;
 }
 
-/* Cards de servicios */
-.card {
-    border: none;
-    transition: all 0.3s ease;
-    height: 100%;
+.bg-light {
+    background-color: var(--processia-light-bg) !important;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+.text-primary {
+    color: var(--processia-navy) !important;
+}
+
+/* ============================================
+   SERVICIOS - CARDS
+   ============================================ */
+
+.service-card {
+    border: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
 }
 
 .feature-icon {
@@ -107,15 +253,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
     background: linear-gradient(135deg, var(--processia-navy) 0%, #2C5282 100%);
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-.card:hover .feature-icon {
+.service-card:hover .feature-icon {
     background: linear-gradient(135deg, var(--processia-gold) 0%, #E5C76B 100%);
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.1);
 }
 
 .feature-icon i {
@@ -123,29 +269,120 @@ html {
     font-size: 1.75rem;
 }
 
-/* Footer */
-footer {
-    background-color: var(--processia-navy) !important;
-    color: var(--processia-white);
+/* ============================================
+   TECNOLOGÍAS Y SECTORES
+   ============================================ */
+
+.tech-badge {
+    transition: all 0.3s ease;
+    min-height: 110px;
+    cursor: pointer;
 }
 
-footer a {
-    color: var(--processia-gold);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.tech-badge:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15) !important;
+    background-color: var(--processia-light-bg) !important;
 }
 
-footer a:hover {
-    color: #E5C76B;
+/* ============================================
+   FORMULARIO DE CONTACTO - ULTRA COMPACTO
+   ============================================ */
+
+#contacto {
+    padding: 4rem 0;
 }
 
-/* Formulario */
-.form-control:focus {
+.contact-form {
+    padding: 2rem;
+    background-color: var(--processia-white);
+}
+
+#contacto .form-control {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+#contacto .form-control:focus {
     border-color: var(--processia-gold);
     box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
 }
 
-/* Animaciones */
+#contacto .form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--processia-navy);
+}
+
+#contacto textarea {
+    height: 100px;
+    max-height: 100px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+#contacto button[type="submit"] {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+}
+
+#contacto .display-6 {
+    font-size: 2rem;
+}
+
+/* Responsive del formulario */
+@media (max-width: 768px) {
+    #contacto {
+        padding: 3rem 0;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    #contacto textarea {
+        height: 90px;
+        max-height: 90px;
+    }
+    
+    #contacto .display-6 {
+        font-size: 1.75rem;
+    }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.bg-dark-blue {
+    background-color: var(--processia-navy) !important;
+}
+
+footer {
+    color: var(--processia-white);
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #E5C76B !important;
+    transform: translateX(5px);
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -158,257 +395,26 @@ footer a:hover {
 }
 
 .animate-in {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: auto;
-        padding: 3rem 0;
-    }
-    
-    .display-4 {
-        font-size: 2rem;
-    }
-    
-    .navbar-brand img {
-        height: 32px;
-    }
-}
-
-/* Utilidades personalizadas */
-.bg-light-custom {
-    background-color: var(--processia-light-bg);
-}
-
-.section-padding {
-    padding: 5rem 0;
-}
-
-@media (max-width: 768px) {
-    .section-padding {
-        padding: 3rem 0;
-    }
-}
-
-/* Estilos adicionales para sección de Tecnologías + Sectores */
-
-.tech-badge {
-    transition: all 0.3s ease;
-    min-height: 100px;
-}
-
-.tech-badge:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15) !important;
-    background-color: var(--processia-light-bg) !important;
-}
-
-.text-gold {
-    color: var(--processia-gold) !important;
-}
-
-/* Mejoras al formulario */
-.form-control-lg {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-}
-
-textarea.form-control-lg {
-    resize: vertical;
-}
-
-/* Navbar links con efecto hover */
-.nav-link {
-    color: var(--processia-navy);
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-link:hover {
-    color: var(--processia-gold);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--processia-gold);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
-    width: 80%;
-}
-
-/* Ajustes para imagen del hero */
-.hero-section img {
-    border: 3px solid var(--processia-gold);
-}
-
-/* Animación de entrada */
-.animate-in {
     animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-.animate-in:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-
-/* ============================================
-   AJUSTES ADICIONALES
-   ============================================ */
-
-/* Logo más grande en navbar */
-.navbar-brand img {
-    max-width: 280px !important;
-    height: auto !important;
 }
 
 /* ============================================
-   FORMULARIO ULTRA COMPACTO - DEFINITIVO
+   UTILIDADES
    ============================================ */
 
-/* Contenedor del formulario */
-#contacto {
-    padding: 3rem 0 !important;
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
 }
 
-/* Card del formulario */
-#contacto .card,
-form#contactForm {
-    padding: 2rem !important;
-    max-width: 100%;
+/* Sombras personalizadas */
+.shadow-sm {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
 }
 
-/* Todos los inputs más pequeños */
-#contacto .form-control {
-    padding: 0.6rem 0.9rem !important;
-    font-size: 0.95rem !important;
-    height: auto !important;
+.shadow {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
 }
 
-/* Textarea específicamente */
-#contacto textarea,
-#mensaje {
-    height: 100px !important;
-    max-height: 100px !important;
-    min-height: 100px !important;
-    resize: vertical !important;
-}
-
-/* Labels más pequeños */
-#contacto .form-label {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.4rem !important;
-    font-weight: 600;
-}
-
-/* Espaciado entre campos */
-#contacto .row > div {
-    margin-bottom: 0.75rem !important;
-}
-
-/* Botón de enviar */
-#contacto button[type="submit"] {
-    margin-top: 0.5rem !important;
-    padding: 0.85rem 1.5rem !important;
-}
-
-/* Título más pequeño */
-#contacto .display-5 {
-    font-size: 2.2rem !important;
-    margin-bottom: 1rem !important;
-}
-
-#contacto .text-muted {
-    font-size: 1rem !important;
-    margin-bottom: 2rem !important;
-}
-
-/* En móvil */
-@media (max-width: 768px) {
-    #contacto {
-        padding: 2rem 0 !important;
-    }
-    
-    #contacto .card {
-        padding: 1.5rem !important;
-    }
-    
-    #contacto textarea {
-        height: 90px !important;
-    }
-}
-
-/* ============================================
-   HERO CON IMAGEN DE FONDO FULL
-   ============================================ */
-
-.hero-section-bg {
-    min-height: 90vh;
-    background-image: url('../images/hero-header.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 5rem 0;
-}
-
-/* Overlay oscuro para legibilidad del texto */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.7) 100%);
-    z-index: 1;
-}
-
-/* Contenido por encima del overlay */
-.hero-section-bg .container {
-    z-index: 2;
-}
-
-/* Texto dorado */
-.text-gold {
-    color: #D4AF37 !important;
-}
-
-/* Botón outline light personalizado */
-.btn-outline-light {
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover {
-    background-color: #D4AF37;
-    border-color: #D4AF37;
-    color: #1E3A5F;
-    transform: translateY(-2px);
-}
-
-/* Responsive para móvil */
-@media (max-width: 768px) {
-    .hero-section-bg {
-        min-height: 70vh;
-        padding: 3rem 0;
-        background-position: center right;
-    }
-    
-    .hero-section-bg h1 {
-        font-size: 2.5rem;
-    }
+.shadow-lg {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
 }
