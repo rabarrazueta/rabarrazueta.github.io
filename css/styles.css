@@ -191,3 +191,72 @@ footer a:hover {
         padding: 3rem 0;
     }
 }
+
+/* Estilos adicionales para sección de Tecnologías + Sectores */
+
+.tech-badge {
+    transition: all 0.3s ease;
+    min-height: 100px;
+}
+
+.tech-badge:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15) !important;
+    background-color: var(--processia-light-bg) !important;
+}
+
+.text-gold {
+    color: var(--processia-gold) !important;
+}
+
+/* Mejoras al formulario */
+.form-control-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+textarea.form-control-lg {
+    resize: vertical;
+}
+
+/* Navbar links con efecto hover */
+.nav-link {
+    color: var(--processia-navy);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--processia-gold);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--processia-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Ajustes para imagen del hero */
+.hero-section img {
+    border: 3px solid var(--processia-gold);
+}
+
+/* Animación de entrada */
+.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-in:nth-child(2) {
+    animation-delay: 0.2s;
+}
