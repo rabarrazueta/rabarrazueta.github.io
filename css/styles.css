@@ -706,3 +706,72 @@ input[type="text"]:focus {
   --green: #D4AF37 !important;
 }
 
+/* ============================================
+   OVERRIDE ULTRA AGRESIVO - CHATBOT
+   ============================================ */
+
+/* Forzar botón flotante Navy Blue */
+button[style*="position: fixed"],
+button[style*="position:fixed"],
+div[style*="position: fixed"] > button,
+iframe + button {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  background-color: #1E3A5F !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.3) !important;
+}
+
+/* Forzar TODOS los botones con color inline turquesa/verde → Gold */
+button[style*="background-color: rgb(32, 182, 158)"],
+button[style*="background-color: rgb(29, 185, 84)"],
+button[style*="background-color: rgb(20, 182, 158)"],
+button[style*="background: rgb(32, 182, 158)"],
+button[style*="backgroundColor"],
+[style*="rgb(32, 182, 158)"] {
+  background: #D4AF37 !important;
+  background-color: #D4AF37 !important;
+  color: #1E3A5F !important;
+  border: 2px solid #D4AF37 !important;
+  font-weight: 600 !important;
+}
+
+/* Forzar TODOS los botones rojos → Navy */
+button[style*="background-color: rgb(239, 68, 68)"],
+button[style*="background-color: rgb(220, 38, 38)"],
+button[style*="background-color: rgb(244, 63, 94)"],
+button[style*="background: rgb(239"],
+[style*="rgb(239, 68, 68)"],
+[style*="rgb(244, 63, 94)"] {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  background-color: #1E3A5F !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+/* SVG icons dentro de botones */
+button svg,
+button svg path {
+  fill: currentColor !important;
+  color: inherit !important;
+}
+
+/* Headers del chat */
+div[style*="background-color"] {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+}
+
+/* Input de enviar */
+button[type="submit"],
+button[aria-label*="send"],
+button[aria-label*="enviar"],
+button[aria-label*="Send"] {
+  background-color: #D4AF37 !important;
+  background: #D4AF37 !important;
+  color: #1E3A5F !important;
+  border: none !important;
+}
+
+button[type="submit"]:hover {
+  background-color: #E5C76B !important;
+}
