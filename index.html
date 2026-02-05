@@ -441,6 +441,61 @@
         
         // Pantalla de bienvenida
         showWelcomeScreen: true,
+
+                // ⭐ TEMA PERSONALIZADO - AQUÍ VAN TUS COLORES ⭐
+          theme: {
+            // Botón flotante (Navy Blue)
+            chatButton: {
+              backgroundColor: '#1E3A5F',
+              iconColor: '#FFFFFF',
+              borderRadius: '50%',
+              boxShadow: '0 4px 20px rgba(30, 58, 95, 0.3)',
+            },
+            
+            // Header del chat (Navy Blue con borde Gold)
+            header: {
+              backgroundColor: '#1E3A5F',
+              color: '#FFFFFF',
+              borderBottom: '2px solid #D4AF37',
+            },
+            
+            // Mensajes del bot
+            message: {
+              bot: {
+                backgroundColor: '#F8F9FA',
+                textColor: '#1E3A5F',
+                borderRadius: '12px',
+                borderLeft: '3px solid #D4AF37',
+              },
+              // Mensajes del usuario
+              user: {
+                backgroundColor: '#1E3A5F',
+                textColor: '#FFFFFF',
+                borderRadius: '12px',
+              }
+            },
+            
+            // Input de texto
+            input: {
+              backgroundColor: '#FFFFFF',
+              textColor: '#1E3A5F',
+              borderColor: '#D1D5DB',
+              focusBorderColor: '#D4AF37',
+              placeholderColor: '#9CA3AF',
+            },
+            
+            // Botón de enviar (Gold)
+            sendButton: {
+              backgroundColor: '#D4AF37',
+              iconColor: '#1E3A5F',
+            },
+            
+            // Fondo general
+            chatWindow: {
+              backgroundColor: '#FFFFFF',
+            },
+          },
+          
       });
     </script>
 
