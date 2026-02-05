@@ -466,30 +466,164 @@ footer a:hover {
     }
 }
 
+/* ============================================
+   CHATBOT N8N - ADAPTADO A PROCESSIA OPS
+   ============================================ */
+
 :root {
-  /* Color principal (botón y elementos activos) */
-  --chat--color-primary: #1DB954; /* Verde tipo Spotify */
-  --chat--color-primary-shade-50: #19A548;
-  --chat--color-primary-shade-100: #168F3D;
+  /* Color principal (Navy Blue - botones, header, elementos activos) */
+  --chat--color-primary: #1E3A5F;
+  --chat--color-primary-shade-50: #2C5282;
+  --chat--color-primary-shade-100: #1A2F4F;
   
-  /* Color secundario (mensajes del usuario) */
-  --chat--color-secondary: #20b69e;
+  /* Color secundario (Gold - acentos y hover) */
+  --chat--color-secondary: #D4AF37;
   
-  /* Tamaño de la ventana */
-  --chat--window--width: 400px;
-  --chat--window--height: 600px;
+  /* Tamaño de la ventana del chat */
+  --chat--window--width: 420px;
+  --chat--window--height: 650px;
   
   /* Tamaño del botón flotante */
-  --chat--toggle--size: 64px;
+  --chat--toggle--size: 68px;
+  --chat--toggle--bottom: 24px;
+  --chat--toggle--right: 24px;
   
-  /* Fondo del header */
-  --chat--header--background: #101330;
+  /* Header del chat (Navy Blue) */
+  --chat--header--background: #1E3A5F;
+  --chat--header--color: #FFFFFF;
   
-  /* Mensajes del bot */
-  --chat--message--bot--background: #f2f4f8;
-  --chat--message--bot--color: #101330;
+  /* Mensajes del bot (fondo claro con texto navy) */
+  --chat--message--bot--background: #F8F9FA;
+  --chat--message--bot--color: #1E3A5F;
+  --chat--message--bot--border: 1px solid #E5E7EB;
   
-  /* Mensajes del usuario */
-  --chat--message--user--background: #20b69e;
-  --chat--message--user--color: #ffffff;
+  /* Mensajes del usuario (Navy con texto blanco) */
+  --chat--message--user--background: #1E3A5F;
+  --chat--message--user--color: #FFFFFF;
+  
+  /* Input de texto */
+  --chat--input--background: #FFFFFF;
+  --chat--input--border: 1px solid #D1D5DB;
+  --chat--input--text: #1E3A5F;
+  
+  /* Botón de enviar (Gold) */
+  --chat--button--background: #D4AF37;
+  --chat--button--color: #1E3A5F;
+  --chat--button--hover: #E5C76B;
+  
+  /* Fondo general del chat */
+  --chat--window--background: #FFFFFF;
+  
+  /* Scrollbar */
+  --chat--scrollbar--thumb: #D4AF37;
+  --chat--scrollbar--track: #F8F9FA;
+  
+  /* Sombras */
+  --chat--window--box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
+  --chat--toggle--box-shadow: 0 4px 20px rgba(30, 58, 95, 0.3);
+  
+  /* Fuente */
+  --chat--font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --chat--font-size: 15px;
+}
+
+/* Personalizaciones adicionales del botón flotante */
+.chat-toggle {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  transition: all 0.3s ease !important;
+}
+
+.chat-toggle:hover {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C76B 100%) !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Animación del icono del bot */
+.chat-toggle svg {
+  transition: transform 0.3s ease !important;
+}
+
+.chat-toggle:hover svg {
+  transform: rotate(15deg) !important;
+}
+
+/* Header del chat con gradiente */
+.chat-header {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  border-bottom: 2px solid #D4AF37 !important;
+}
+
+/* Mensajes del usuario con Navy */
+.chat-message-user {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15) !important;
+}
+
+/* Mensajes del bot con acento gold */
+.chat-message-bot {
+  background-color: #F8F9FA !important;
+  border-left: 3px solid #D4AF37 !important;
+  color: #1E3A5F !important;
+}
+
+/* Botón de enviar con Gold */
+.chat-input-button {
+  background-color: #D4AF37 !important;
+  color: #1E3A5F !important;
+  transition: all 0.3s ease !important;
+}
+
+.chat-input-button:hover {
+  background-color: #E5C76B !important;
+  transform: scale(1.05) !important;
+}
+
+/* Input con focus en Gold */
+.chat-input:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Scrollbar personalizado */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #E5C76B;
+}
+
+/* Pantalla de bienvenida */
+.chat-welcome-screen {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%) !important;
+}
+
+.chat-welcome-title {
+  color: #1E3A5F !important;
+}
+
+.chat-welcome-subtitle {
+  color: #6B7280 !important;
+}
+
+/* Responsive - en móvil, chat más grande */
+@media (max-width: 768px) {
+  :root {
+    --chat--window--width: 100vw;
+    --chat--window--height: 100vh;
+    --chat--toggle--size: 60px;
+    --chat--toggle--bottom: 20px;
+    --chat--toggle--right: 20px;
+  }
 }
