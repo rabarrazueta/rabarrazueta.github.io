@@ -418,3 +418,50 @@ footer a:hover {
 .shadow-lg {
     box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
 }
+
+/* ============================================
+   CONSENTIMIENTO DE DATOS PERSONALES
+   ============================================ */
+
+#contacto .alert {
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#contacto .alert ul {
+    margin-bottom: 0.5rem;
+}
+
+#contacto .alert ul li {
+    margin-bottom: 0.25rem;
+}
+
+#contacto .form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+}
+
+#contacto .form-check-label {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-left: 0.5rem;
+}
+
+#contacto .form-check-input:checked {
+    background-color: var(--processia-navy);
+    border-color: var(--processia-navy);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contacto .alert {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+    
+    #contacto .form-check-label {
+        font-size: 0.85rem;
+    }
+}
