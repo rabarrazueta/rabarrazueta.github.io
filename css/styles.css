@@ -465,3 +465,31 @@ footer a:hover {
         font-size: 0.85rem;
     }
 }
+
+:root {
+  /* Color principal (botón y elementos activos) */
+  --chat--color-primary: #1DB954; /* Verde tipo Spotify */
+  --chat--color-primary-shade-50: #19A548;
+  --chat--color-primary-shade-100: #168F3D;
+  
+  /* Color secundario (mensajes del usuario) */
+  --chat--color-secondary: #20b69e;
+  
+  /* Tamaño de la ventana */
+  --chat--window--width: 400px;
+  --chat--window--height: 600px;
+  
+  /* Tamaño del botón flotante */
+  --chat--toggle--size: 64px;
+  
+  /* Fondo del header */
+  --chat--header--background: #101330;
+  
+  /* Mensajes del bot */
+  --chat--message--bot--background: #f2f4f8;
+  --chat--message--bot--color: #101330;
+  
+  /* Mensajes del usuario */
+  --chat--message--user--background: #20b69e;
+  --chat--message--user--color: #ffffff;
+}
