@@ -405,5 +405,45 @@
     
     <!-- JavaScript personalizado -->
     <script src="js/main.js"></script>
+
+        <!-- Widget de Chat n8n -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      
+      createChat({
+        // URL del webhook
+        webhookUrl: 'https://voltifyec.me/webhook/0b6633a7-f25a-41d7-8928-f4ca94c2f92e/chat',
+        
+        // Modo ventana (botón flotante en esquina)
+        mode: 'window',
+        
+        // Streaming activado (respuestas en tiempo real)
+        enableStreaming: true,
+        
+        // Mensajes iniciales
+        initialMessages: [
+          'Bienvenido a Processia Ops 👋',
+          '¿Tienes alguna pregunta sobre automatización de procesos?'
+        ],
+        
+        // Textos personalizados (español)
+        i18n: {
+          en: {
+            title: '¿Tienes alguna pregunta?',
+            subtitle: 'Estamos aquí para ayudarte con automatización de procesos',
+            footer: '',
+            getStarted: 'Iniciar conversación',
+            inputPlaceholder: 'Escribe tu pregunta aquí...',
+          }
+        },
+        
+        // Pantalla de bienvenida
+        showWelcomeScreen: true,
+      });
+    </script>
+
+    
 </body>
 </html>
