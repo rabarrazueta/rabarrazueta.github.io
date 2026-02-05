@@ -475,3 +475,39 @@ footer a:hover {
   --chat--color-primary: #1E3A5F;
   --chat--color-secondary: #D4AF37;
 }
+
+/* ============================================
+   CHATBOT - COLORES DE MARCA MÍNIMOS
+   ============================================ */
+
+/* Header del chat - Navy Blue con borde Gold */
+[class*="chat-window"] > div:first-child,
+div[data-key*="header"],
+div[class*="Header"] {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  border-bottom: 2px solid #D4AF37 !important;
+}
+
+/* Botón de enviar - Gold */
+button[type="submit"],
+button[aria-label="Send Message"],
+form button:last-of-type {
+  background-color: #D4AF37 !important;
+  color: #1E3A5F !important;
+  border: none !important;
+  transition: background-color 0.3s ease !important;
+}
+
+button[type="submit"]:hover,
+button[aria-label="Send Message"]:hover,
+form button:last-of-type:hover {
+  background-color: #E5C76B !important;
+}
+
+/* Borde del input cuando tiene focus - Gold */
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #D4AF37 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2) !important;
+}
