@@ -627,3 +627,82 @@ footer a:hover {
     --chat--toggle--right: 20px;
   }
 }
+
+/* ============================================
+   OVERRIDE FORZADO - BOTONES DEL CHAT
+   ============================================ */
+
+/* Botones de sugerencias rápidas (Gold) */
+.chat-suggestion-button,
+[class*="suggestion"],
+[class*="quick-reply"],
+button[class*="chat"] {
+  background-color: #D4AF37 !important;
+  color: #1E3A5F !important;
+  border: 2px solid #D4AF37 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.chat-suggestion-button:hover,
+[class*="suggestion"]:hover,
+[class*="quick-reply"]:hover {
+  background-color: #1E3A5F !important;
+  border-color: #1E3A5F !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25) !important;
+}
+
+/* Header - asegurar Navy Blue */
+[class*="chat-header"],
+[class*="ChatHeader"] {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  border-bottom: 2px solid #D4AF37 !important;
+}
+
+/* Botón de enviar - Gold */
+[class*="send-button"],
+[class*="SendButton"],
+button[type="submit"] {
+  background-color: #D4AF37 !important;
+  color: #1E3A5F !important;
+}
+
+[class*="send-button"]:hover,
+[class*="SendButton"]:hover {
+  background-color: #E5C76B !important;
+}
+
+/* Input con focus */
+[class*="chat-input"]:focus,
+[class*="ChatInput"]:focus,
+input[type="text"]:focus {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Mensajes del usuario - Navy */
+[class*="message-user"],
+[class*="MessageUser"],
+[class*="user-message"] {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%) !important;
+  color: #FFFFFF !important;
+}
+
+/* Mensajes del bot - claro con borde Gold */
+[class*="message-bot"],
+[class*="MessageBot"],
+[class*="bot-message"] {
+  background-color: #F8F9FA !important;
+  border-left: 3px solid #D4AF37 !important;
+  color: #1E3A5F !important;
+}
+
+/* Eliminar cualquier color turquesa/verde */
+* {
+  --teal: #1E3A5F !important;
+  --turquoise: #1E3A5F !important;
+  --green: #D4AF37 !important;
+}
+
