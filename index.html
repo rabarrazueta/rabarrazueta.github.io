@@ -498,7 +498,73 @@
           
       });
     </script>
-
+        <!-- Script de corrección de colores del chat -->
+    <script>
+    // Esperar a que el widget cargue completamente
+    function fixChatColors() {
+      // Cambiar TODOS los botones verdes/turquesas a Gold
+      document.querySelectorAll('button, [role="button"]').forEach(btn => {
+        const computedStyle = window.getComputedStyle(btn);
+        const bgColor = computedStyle.backgroundColor;
+        
+        // Detectar verde/turquesa (rgb(32, 182, 158) o similar)
+        if (bgColor.includes('32, 182, 158') || 
+            bgColor.includes('29, 185, 84') || 
+            bgColor.includes('20, 182, 158')) {
+          btn.style.setProperty('background-color', '#D4AF37', 'important');
+          btn.style.setProperty('background', '#D4AF37', 'important');
+          btn.style.setProperty('color', '#1E3A5F', 'important');
+          btn.style.setProperty('border', '2px solid #D4AF37', 'important');
+          btn.style.fontWeight = '600';
+          
+          // Hover effect
+          btn.addEventListener('mouseenter', () => {
+            btn.style.setProperty('background-color', '#1E3A5F', 'important');
+            btn.style.setProperty('color', '#FFFFFF', 'important');
+          });
+          
+          btn.addEventListener('mouseleave', () => {
+            btn.style.setProperty('background-color', '#D4AF37', 'important');
+            btn.style.setProperty('color', '#1E3A5F', 'important');
+          });
+        }
+        
+        // Detectar botón rojo (rgb(239, 68, 68) o similar)
+        if (bgColor.includes('239, 68, 68') || 
+            bgColor.includes('220, 38, 38') ||
+            bgColor.includes('239, 68') ||
+            bgColor.includes('244, 63, 94')) {
+          btn.style.setProperty('background', 'linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)', 'important');
+          btn.style.setProperty('color', '#FFFFFF', 'important');
+          btn.style.setProperty('border', 'none', 'important');
+          btn.style.setProperty('box-shadow', '0 4px 20px rgba(30, 58, 95, 0.3)', 'important');
+        }
+      });
+      
+      // Cambiar SVGs (iconos) dentro del botón flotante
+      document.querySelectorAll('svg').forEach(svg => {
+        const parent = svg.closest('button');
+        if (parent) {
+          const bgColor = window.getComputedStyle(parent).backgroundColor;
+          if (bgColor.includes('239, 68') || bgColor.includes('244, 63')) {
+            svg.style.setProperty('color', '#FFFFFF', 'important');
+            svg.style.setProperty('fill', '#FFFFFF', 'important');
+          }
+        }
+      });
+    }
+    
+    // Ejecutar al cargar
+    setTimeout(fixChatColors, 1500);
+    
+    // Re-ejecutar cada 3 segundos (por si el widget recarga botones dinámicamente)
+    setInterval(fixChatColors, 3000);
+    
+    // Ejecutar cuando se abre el chat
+    document.addEventListener('click', () => {
+      setTimeout(fixChatColors, 500);
+    });
+    </script>
     
 </body>
 </html>
