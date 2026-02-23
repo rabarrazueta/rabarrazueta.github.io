@@ -34,7 +34,7 @@
             boton.disabled = true;
 
             // REEMPLAZA LA URL DE ABAJO POR LA URL DE PRODUCCIÓN DE TU NUEVO WEBHOOK
-            fetch('TU_URL_DE_PRODUCCION_AQUI', {
+            fetch('https://voltifyec.me/webhook/detector-intenciones', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ queja: texto })
