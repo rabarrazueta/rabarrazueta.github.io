@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Intenciones - Processia Ops</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f4f4f9; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 400px; text-align: center; }
+        textarea { width: 100%; height: 100px; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; resize: none; font-size: 16px;}
+        button { background-color: #D4AF37; color: #1E3A5F; border: none; padding: 15px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold;}
+        button:hover { background-color: #b8962e; }
+        #mensaje { margin-top: 15px; font-weight: bold; color: green; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Simulador de Quejas</h2>
+        <p>Escribe una queja típica de cliente:</p>
+        <textarea id="quejaText" placeholder="Ej: Llevo esperando mi pedido 3 días y nadie me contesta..."></textarea>
+        <button id="btnEnviar" onclick="enviarQueja()">Analizar con IA</button>
+        <p id="mensaje">¡Queja procesada con éxito! Mira la pantalla.</p>
+    </div>
+
+    <script>
+        function enviarQueja() {
+            const texto = document.getElementById('quejaText').value;
+            const boton = document.getElementById('btnEnviar');
+            const mensaje = document.getElementById('mensaje');
+
+            if (!texto) { alert("Por favor, escribe una queja primero."); return; }
+
+            boton.innerText = "Procesando...";
+            boton.disabled = true;
+
+            // REEMPLAZA LA URL DE ABAJO POR LA URL DE PRODUCCIÓN DE TU NUEVO WEBHOOK
+            fetch('TU_URL_DE_PRODUCCION_AQUI', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ queja: texto })
+            })
+            .then(response => {
+                boton.innerText = "Analizar con IA";
+                boton.disabled = false;
+                document.getElementById('quejaText').value = '';
+                mensaje.style.display = 'block';
+                setTimeout(() => { mensaje.style.display = 'none'; }, 3000);
+            })
+            .catch(error => {
+                alert("Hubo un error al procesar.");
+                boton.innerText = "Analizar con IA";
+                boton.disabled = false;
+            });
+        }
+    </script>
+</body>
+</html>
