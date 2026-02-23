@@ -1,7 +1,7 @@
 // processia-landing/js/main.js
 // Configuración
 const CONFIG = {
-  webhookUrl: 'https://voltifyec.me/webhook/processia-contact-form',
+  webhookUrl: 'https://voltifyec.me/webhook/5ea6ad9d-870c-4953-9c45-f8ccf98de85f',
   apiKey: 'PrOc3ss1A_2026_k3Y_s3cUr3_9X7zQ0915', // Mismo token del webhook
   timeout: 10000 // 10 segundos
 };
